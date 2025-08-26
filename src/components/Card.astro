@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  image: ImageMetadata;
+  imageAlt?: string;
+  badges?: string[];
+}
+
+const { title, image, imageAlt, badges = [] } = Astro.props;
+---
+
+<div class="card">
+  <header class="!gap-0">
+    <p class="font-bold mb-0 !mb-0">{title}</p>
+  </header>
+  <section class="px-0">
+    <Image
+      src={image}
+      alt={imageAlt || title}
+      class="aspect-video object-cover w-full"
+      loading="lazy"
+    />
+  </section>
+  {
+    badges.length > 0 && (
+      <footer class="flex items-center gap-2">
+        {badges.map((badge) => (
+          <span class="badge-secondary">{badge}</span>
+        ))}
+      </footer>
+    )
+  }
+</div>

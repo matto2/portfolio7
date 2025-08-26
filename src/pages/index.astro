@@ -1,16 +1,42 @@
 ---
+import Base from "../layouts/Base.astro";
+import AnimatedHeader from "../components/AnimatedHeader.astro";
+import Card from "../components/Card.astro";
 
+// Import your images here when you add them to src/assets/images/
+// import project1Image from "../assets/images/project1.jpg";
+// import project2Image from "../assets/images/project2.jpg";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <AnimatedHeader />
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+    <!-- Example of how to use the Card component with Astro Image -->
+    <!-- 
+    <Card
+      title="Project 1"
+      image={project1Image}
+      imageAlt="Project 1 screenshot"
+      badges={["Web Design", "Digital Marketing"]}
+    />
+    -->
+
+    <!-- Placeholder cards until you add your images -->
+    <div class="card w-full">
+      <header class="!gap-0">
+        <p class="font-bold mb-0 !mb-0">Project 1</p>
+      </header>
+      <section class="px-0">
+        <div class="aspect-video bg-gray-200 flex items-center justify-center">
+          <p class="text-gray-500">Add image to src/assets/images/</p>
+        </div>
+      </section>
+      <footer class="flex items-center gap-2">
+        <span class="badge-secondary">Web Design</span>
+        <span class="badge-secondary">Digital Marketing</span>
+      </footer>
+    </div>
+    <div class="card w-full"></div>
+    <div class="card w-full"></div>
+  </div>
+</Base>

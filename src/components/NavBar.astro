@@ -1,0 +1,51 @@
+---
+import Stars2 from "../components/Stars2.astro";
+import Icon from "../components/Stars2.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="py-6">
+  <div class="mx-auto max-w-5xl px-4 lg:px-0">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Name -->
+
+      <a
+        href="/"
+        class="flex items-center gap-2 h-6"
+        aria-label="Matthew O'Leary's Portfolio"
+      >
+        <span class="text-[var(--color-primary)] w-5 h-5 mb-3">
+          <Stars2 />
+        </span>
+        <span
+          class="text-lg font-bold text-gray-700 hover:text-gray-500 transition-colors leading-6"
+        >
+          Matthew O'Leary
+        </span>
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="flex items-center space-x-2 md:space-x-8">
+        <a
+          href="/"
+          class={`transition-colors ${currentPath === "/" ? "text-[var(--color-primary)] font-bold" : "text-gray-600 hover:text-gray-900"}`}
+        >
+          Work
+        </a>
+        <a
+          href="/about"
+          class={`transition-colors ${currentPath === "/about" ? "text-[var(--color-primary)] font-bold" : "text-gray-600 hover:text-gray-900"}`}
+        >
+          About
+        </a>
+        <a
+          href="/contact"
+          class={`transition-colors ${currentPath === "/contact" ? "text-[var(--color-primary)] font-bold" : "text-gray-600 hover:text-gray-900"}`}
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
